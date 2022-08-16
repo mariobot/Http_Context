@@ -47,6 +47,16 @@ public partial class About : Page
         sb.Append("Timestamp for the HTTP request: " +
             Context.Timestamp.ToString() + "<br/>");
 
+        sb.Append("<user> <br/>");
+
+        sb.Append(Context.User.Identity.Name + "<br/>" + "<br/>");
+        sb.Append(Context.User.Identity.AuthenticationType + "<br/>" + "<br/>");
+        sb.Append(Context.User.Identity.IsAuthenticated.ToString() + "<br/>" + "<br/>");
+
+        sb.Append("more information" + "<br/>");
+
+        sb.Append(Context.Session.SessionID);
+
         // Assign StringBuilder object to output label.
         OutputLabel.Text = sb.ToString();
     }
